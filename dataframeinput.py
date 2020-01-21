@@ -19,3 +19,5 @@ def parsefile():
     return [x.strip() for x in line1]
 
 print(parse_list(parsefile()))
+
+##print
