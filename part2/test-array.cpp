@@ -21,8 +21,8 @@ void test2() {
     String s2 = new String("World");
     String s3 = new String("Earth");
     Array a = new Array();
-    a->add(s1);
-    a->add(s2);
+    a->push_back(s1);
+    a->push_back(s2);
     t_true(a->get(0)->equals(s1));
     t_true(a->get(1)->equals(s2));
     t_true(a->length() == 2); 
@@ -34,10 +34,31 @@ void test2() {
     
 }
 
+
+void test3() {
+    
+    String s1 = new String("Hello");
+    String s2 = new String("World");
+    String s3 = new String("Earth");
+    Array a = new Array();
+    a->push_back(s1);
+    a->push_back(s2);
+    t_true(a->get(0)->equals(s1));
+    t_true(a->length() == 2); 
+    a->add(s3, 0);
+    t_true(a->length() == 3);
+    t_true(a->get(0)->equals(s3));
+    t_true(a->get(1)->equals(s1));
+    t_true(a->get(2)->equals(s2));
+    OK("3");
+   
+}
+
 int main() {
     
     test1();
     test2();
+    test3();
     
     return 0;
 }
