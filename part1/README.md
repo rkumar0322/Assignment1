@@ -6,6 +6,6 @@ Basically, we scan through the file and separate the fields by "><" to parse eac
 We define the type of each column as the field type in largest schema row. To find the type of each field, we have a infer_type() function which tranfer every field to representation in its corresponding type. When building the columnar representation by using dataframe, 
 we check if the field matches the type of column first. If it matches the type, we appened its value; if not, we replace its value by "NONE", so it will be shown as missing in the table. As a result, "<>", blank and any field which doesn't match the column's type will be shown as "NONE" in the table, and we define "NONE" as missing values. 
 
-With the pandas dataframe, we can easily allocate each field by giving its column and row numbers. 
+With the pandas dataframe, we can easily access each field by inputting its column and row numbers. 
 
 
