@@ -58,11 +58,32 @@ void test3() {
    
 }
 
+void test4() {
+    
+    String s1 = new String("Hello");
+    String s2 = new String("World");
+    String s3 = new String("Earth");
+    Array a1 = new Array(10);
+    a1->push_back(s1);
+    a1->push_back(s2);
+    Array a2 = new Array(10);
+    a2->push_back(s1);
+    a2->push_back(s2);
+    t_true(a1->equals(a2));
+    Array a3 = new Array(10);
+    a3->push_back(s1);
+    a3->push_back(s3);
+    t_false(a1->equals(a3));
+    OK("4");
+    
+}
+
 int main() {
     
     test1();
     test2();
     test3();
+    test4();
     
     return 0;
 }
