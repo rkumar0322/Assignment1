@@ -19,6 +19,7 @@ public:
 
     Array(size_t limit) {
     }
+    
 
     void assign(Object element, size_t index) {
 
@@ -28,7 +29,11 @@ public:
         
     }
     
-    void add() {
+    void push_back(Object o) {
+        
+    }
+    
+    void add(Object o, size_t index) {
         
     }
     
