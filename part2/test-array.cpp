@@ -3,6 +3,10 @@
 #include "array.h"
 #include "string.h" 
 
+void FAIL() {   exit(1);    }
+void OK(const char* m) { /** print m */ }
+void t_true(bool p) { if (!p) FAIL(); }
+void t_false(bool p) { if (p) FAIL(); }
 
 void test1() {
     String s1 = new String("Hello");
