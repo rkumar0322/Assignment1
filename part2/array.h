@@ -28,7 +28,7 @@ public:
         
     }
     
-    void add(size_t index, Object o) {
+    void add() {
         
     }
     
