@@ -1,4 +1,8 @@
+#!/usr/bin/env python
+
 import pandas as pd
+import sys
+import argparse
 
 
 def parse_row(strparse):
@@ -91,21 +95,34 @@ def is_missing_idx(df,col,offset):
 def print_col_idx(df,col,offset):
     return df[col][offset]
 
+def main(argv):
 
+    #Add all command line arguments
+    parser = argparse.ArgumentParser(description='Short sample app')
+    parser.add_argument('-f', action="store",
+                        dest="f",default = False)
+    parser.add_argument('-from', action="store",
+                        dest="from1")
+    parser.add_argument('-len', action="store",
+                        dest="len")
+    parser.add_argument('-print_col_type', action="store",
+                        dest="print_col_type")
+    parser.add_argument('-is_missing_idx', action="store",
+                        dest="is_missing_idx", nargs='*')
+    parser.add_argument('-print_col_idx', action="store",
+                        dest="print_col_idx", nargs="*")
 
-
-
-table =  create_table(parse_list(parsefile("newtxt.txt"))[0],parse_list(parsefile("newtxt.txt"))[1])
-
-
-print(print_col_type(table,0))
-print(print_col_type(table,2))
-print(is_missing_idx(table,2,0))
-print(is_missing_idx(table,2,1))
-print(is_missing_idx(table,2,2))
-print(is_missing_idx(table,1,2))
-print(print_col_idx(table,2,0))
-table = create_table(parse_list(parsefile("newtxt.txt",5))[0],parse_list(parsefile("newtxt.txt",5))[1])
-print(print_col_idx(table,1,0))
-
-
+    #parse the arguments
+    x = parser.parse_args(argv)
+    #parse the file
+    f = parsefile(x.f, int(x.from1), int(x.len))
+    list2 = parse_list(f)
+    table2 = create_table(list2[0],list2[1])
+    if hasattr(x,"print_col_type") and x.print_col_type is not None:
+        print(print_col_type(table2,int(x.print_col_type)))
+    if hasattr(x,"is_missing_idx") and x.is_missing_idx is not None:
+        print(is_missing_idx(table2,int(x.is_missing_idx[0]),int(x.is_missing_idx[1])))
+    if hasattr(x,"print_col_idx") and x.print_col_idx is not None:
+        print(print_col_idx(table2,int(x.print_col_idx[0]),int(x.print_col_idx[1])))
+if __name__ == "__main__":
+   main(sys.argv[1:])
