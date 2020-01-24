@@ -15,12 +15,25 @@ class Array: public Object {
 public:
 
     Object** array;
+    size_t size;
 
     Array(size_t limit) {
     }
 
     void assign(Object element, size_t index) {
 
+    }
+    
+    Object get(size_t index) {
+        
+    }
+    
+    void add(size_t index, Object o) {
+        
+    }
+    
+    void clear() {
+        
     }
 
     size_t length() {
