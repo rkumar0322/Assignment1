@@ -9,6 +9,7 @@ void t_true(bool p) { if (!p) FAIL(); }
 void t_false(bool p) { if (p) FAIL(); }
 
 void test1() {
+    
     String s1 = new String("Hello");
     String s2 = new String("World");
     String s3 = new String("Hello");
