@@ -9,7 +9,9 @@
 
 
 class Object {
-
+  public:
+  
+  bool equals(Object o);
 
 
 };
