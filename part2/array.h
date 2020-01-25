@@ -16,10 +16,20 @@ public:
 
     Object* array;
     size_t size;
+    size_t MAX_SIZE;
 
     //Constructor:
     //initializing an empty array with input size
     Array(size_t limit) {
+        Object[] l = new Object[limit];
+        array = *l;
+        size = 0;
+        MAX_SIZE = limit;
+    }
+    
+    ~Array() {
+        delete[] l;
+        delete array;
     }
     
 
