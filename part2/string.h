@@ -20,12 +20,11 @@ class String : public Object {
                         }
 		}
 
-		bool equals(String* s) {
-    
-		}
-    
-    
-    int size() {
+	bool equals(String* s) {
 		
-    }
+	}
+	
+	int size() {
+		
+	}
 };
