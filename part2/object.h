@@ -11,6 +11,7 @@
 class Object {
   public:
   
+  //compares o with this Object for equality
   bool equals(Object o);
 
 
