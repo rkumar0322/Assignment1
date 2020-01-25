@@ -14,7 +14,7 @@
 class Array: public Object {
 public:
 
-    Object** array;
+    Object* array;
     size_t size;
 
     //Constructor:
